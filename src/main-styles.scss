@@ -1,0 +1,37 @@
+//Auther: Sachin Baburao Shelke
+// Here adding Global styles
+
+/*+++++++ Global Styles ++++++++++++*/
+html,body {
+    height: 100%;
+    font-size: 18px !important; //defult font size
+    overflow:  !important;
+}
+
+// Also updating Bulma 
+
+//copied from: https://bulma.io/documentation/customize/with-sass-cli/
+
+// Import a Google Font
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+
+// Set your brand colors
+$purple: #a59ad7;
+$pink: #FE76C2;
+$blue: #37c7F2;
+$light-red: #fff3f3;
+
+$light: #fafcff;  //for background tones
+
+// Update Bulma's global variables
+$family-sans-serif: "Nunito", sans-serif;
+$primary: $purple;
+$link: $blue;
+
+
+// Update some of Bulma's component variables
+$body-background-color: $light;
+$control-border-width: 2px;
+$input-border-color: transparent;
+$input-shadow: none;
+$input-background-color: #f3f5fa;

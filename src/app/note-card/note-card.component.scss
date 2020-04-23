@@ -1,0 +1,96 @@
+@import '../../main-styles.scss';
+
+.note-card-container {
+
+    position: relative;  // added for close button
+
+    background: white;
+    border-radius: 5px;
+
+    box-shadow: 0px 2px 15px 2px rgba( black, 0.068);
+
+    transition: box-shadow 0.2s ease-out;
+
+
+    &:hover { //nest hover styling within this decoration
+
+        cursor: pointer;
+        box-shadow: 0px 0px 0px 4px rgba(black, 0.068);
+        
+        .x-button {
+            opacity: 1;  // on hovering card the xbutton will be visisble.
+       
+            transform: scale(1);
+            transition-delay: 0.35s; //to delay the xbutton disapearnce
+
+        }
+    
+    } 
+
+    .note-card-content {
+        padding: 25px;
+
+        .note-card-title {
+            font-size: 22px;
+            font-weight: bold;
+
+            color: $purple;
+        }
+
+        .note-card-body {
+            position: relative;
+            color: #555;
+
+            //max ht before it is truncated
+            max-height: 80px;
+            overflow: hidden;
+
+            .fade-out-truncation {
+                position: absolute;
+
+
+                pointer-events: none;
+
+                bottom: 0;
+
+                height: 50%;
+                width: 100%;
+                background: linear-gradient(to bottom, rgba(white, 0) 0%, rgba(white, 0.8) 50%, white 100%);
+            }
+        }
+    }
+}
+
+.x-button {
+    position: absolute;
+
+    top: 12px;  //12px from top
+    right: 12px;  //12px from right
+    height: 34px;
+    width: 34px;
+
+    background-color: $light-red;
+
+    //import delete x image
+    background-image: url('../../assets/delete_icon.svg');
+    background-repeat: no-repeat;  //avoid image repeatation
+    background-position: center;
+
+    opacity: 0; //buttub is hidden by default
+    transform: scale(0.35);  // scaling the button
+
+    border-radius: 4px;
+
+    //animation
+    transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+    
+
+    &:hover {
+        background-color: darken( $light-red, 2%);  //darken bg after hovering over it
+    }
+
+    //onclick
+    &:active {
+        background-color: darken( $light-red, 4%);  //darken bg after clicking over it
+    }
+ }
